@@ -5,3 +5,11 @@ E -> Express js     : backend framework for builing app on top of Node js
 R -> React js       : frontend framework
 N -> Node js        : envirorment to power the app  
 
+Purpose of this exercise, understand what is happening between the front and the backend on a simple CRUD 
+
+So, long story short...
+In the front end, users can create, delete and update their To Do List, and the data will be rendered back to them to see it 
+
+Any time the "submit" (edit, or delete) button is clicked, what is really happening is there is a HTTP request being sended to an restful API (that depending of the button, the request, and therfore the route of that request). This one, will take this requests, then its going to instruct the DB what kind of operation must be done (this via controllers in our server). 
+
+So the important piece here is the restful API, it uses transfer protocols to run CRUD operations on the DB, it DOENS´T CRUD but holds the instruction for the DB to CRUD (important detail)
