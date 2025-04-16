@@ -1,0 +1,7 @@
+Simple To Do List app using the PERN stack
+
+P -> PostgresSQL    : object-oriented relational DB management system
+E -> Express js     : backend framework for builing app on top of Node js
+R -> React js       : frontend framework
+N -> Node js        : envirorment to power the app  
+
