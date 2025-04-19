@@ -28,3 +28,4 @@ creating server
                                         clases instead "pure tables")
                 --> dotenv:             Allows set envirorment variables
                 --> morgan:             see queries made on console 
+                --> nodemon -D:         restart the node app when it listens changes made 

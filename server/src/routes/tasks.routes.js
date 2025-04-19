@@ -1,9 +1,9 @@
 import { Router } from "express";
 
-import helloworld from "./tasks.routes.js";
-
 const router = Router();
 
-router.use("", helloworld);
+router.get("/", (req, res) => {
+    res.send("Tasks API is running");
+});
 
 export default router;
