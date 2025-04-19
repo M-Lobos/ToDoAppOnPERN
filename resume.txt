@@ -13,3 +13,18 @@ In the front end, users can create, delete and update their To Do List, and the 
 Any time the "submit" (edit, or delete) button is clicked, what is really happening is there is a HTTP request being sended to an restful API (that depending of the button, the request, and therfore the route of that request). This one, will take this requests, then its going to instruct the DB what kind of operation must be done (this via controllers in our server). 
 
 So the important piece here is the restful API, it uses transfer protocols to run CRUD operations on the DB, it DOENS´T CRUD but holds the instruction for the DB to CRUD (important detail)
+
+_________________________________________
+creating server
+    mkdir server
+    cd server
+    npm init -y 
+    npm install  *** Libraries ***      *** What for ***
+                --> express:            allows to create quickly create a server
+                --> cors:               allows different domains app to interact each other (server will run on 
+                                        localhost:3000 and react will be running on 5000 )
+                --> pg:                 connects our server with our db and run PostgresSQL queries
+                --> sequelize:          ORM (object relational mapping), allows working with db under OOP paradigm (object and
+                                        clases instead "pure tables")
+                --> dotenv:             Allows set envirorment variables
+                --> morgan:             see queries made on console 
