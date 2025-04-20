@@ -29,3 +29,7 @@ creating server
                 --> dotenv:             Allows set envirorment variables
                 --> morgan:             see queries made on console 
                 --> nodemon -D:         restart the node app when it listens changes made 
+                --> sequelize-autp -d:  imports secuential models already defined into a directory
+
+
+npx sequelize-auto -0 "./src/modes" -d db_name -h localhost -u user -x password -p 5432 -e postgres -l esm --cascadeModel p 
