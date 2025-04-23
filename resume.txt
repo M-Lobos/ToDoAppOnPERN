@@ -14,7 +14,7 @@ Any time the "submit" (edit, or delete) button is clicked, what is really happen
 
 So the important piece here is the restful API, it uses transfer protocols to run CRUD operations on the DB, it DOENS´T CRUD but holds the instruction for the DB to CRUD (important detail)
 
-_________________________________________
+BACKEND_________________________________________
 creating server
     mkdir server
     cd server
@@ -27,9 +27,39 @@ creating server
                 --> sequelize:          ORM (object relational mapping), allows working with db under OOP paradigm (object and
                                         clases instead "pure tables")
                 --> dotenv:             Allows set envirorment variables
-                --> morgan:             see queries made on console 
+                --> morgan:             Shows queries made on console 
                 --> nodemon -D:         restart the node app when it listens changes made 
-                --> sequelize-autp -d:  imports secuential models already defined into a directory
+                --> sequelize-autp -d:  imports secuential models already defined into a directoryhi
 
 
 npx sequelize-auto -0 "./src/modes" -d db_name -h localhost -u user -x password -p 5432 -e postgres -l esm --cascadeModel p 
+
+
+FRONTEND________________________
+
+npm create vite@latest client -- --template react 
+
+cd client
+npm install
+npm run dev 
+
+(frontend on port 5173 by default)
+
+
+
+npm install ***Libraries***
+            --> react-router-dom :      enables routing in React applications, allowing navigation between 
+                                        different views without page reloads
+
+            --> @mui/material:          Elments already stilized as components for react. Docs at https://mui.com/
+
+            --> @mui/icons-material:    Use the font Icon component or the prebuilt SVG Material Icons     
+
+npm list react-router-dom   --> version of react-router-dom    
+
+*** IMPORTANT ***
+    In Material UI, inputs recive another name, they are named as "TextFields"
+
+
+
+

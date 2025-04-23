@@ -9,8 +9,8 @@ import routes from './routes/routes.js';
 const app = express();
 const PORT = process.env.PORT || 3000;
 
+app.use(cors());
 app.use(morgan('dev'));
-
 //middleware for parsing JSON request data
 app.use(express.json());
 app.use(express.urlencoded({ extended: true }));

@@ -1,0 +1,15 @@
+{
+    "files.exclude": {
+        "**/.git": true,
+        "**/.svn": true,
+        "**/.hg": true,
+        "**/.DS_Store": true,
+        "**/Thumbs.db": true,
+        "server": true,
+        /* "client": true, */
+        "client/node_modules": true,
+        "client/public": true,
+    }
+}
+/* BACKEND IS CALLED "SERVER" */
+/* FRONTEND IS CALLED "CLIENT" */
