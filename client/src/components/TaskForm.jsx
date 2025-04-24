@@ -12,6 +12,7 @@ function TaskForm() {
     });
 
     const [loading, sEtloading] = useState(false)
+    const [editing, setEditing] = useState(false)
 
     const params = useParams()
     //this will get the id from the url, so we can edit the task with that id
@@ -21,16 +22,26 @@ function TaskForm() {
         e.preventDefault();
         /* console.log("submit") */
         /* console.log("task", task) */
-
         sEtloading(true)
 
-        const res = await fetch("http://localhost:3000/api/v1/tasks", {
-            method: "POST",
-            headers: { "content-type": "application/json" },
-            body: JSON.stringify(task),
-        });
-        const data = await res.json();
-        console.log("data", data);
+        if (editing) {
+            const res = await fetch(`http://localhost:3000/api/v1/tasks/${params.id}`, {
+                method: "PUT",
+                headers: { "content-type": "application/json" },
+                body: JSON.stringify(task),
+            });
+
+            const data = await res.json();
+            console.log(data)
+
+        } else {
+            await fetch("http://localhost:3000/api/v1/tasks", {
+                method: "POST",
+                headers: { "content-type": "application/json" },
+                body: JSON.stringify(task),
+            });
+        }
+
 
         sEtloading(false)
         navigate("/");
@@ -50,13 +61,11 @@ function TaskForm() {
         try {
             const res = await fetch(`http://localhost:3000/api/v1/tasks/${id}`);
             const data = await res.json();
-
-            console.log("task retrieved succesfully", data)
-
             setTask({
                 title: data.data?.title ?? "",
                 description: data.data?.description ?? ""
             });
+            setEditing(true);
 
         } catch (error) {
             console.error(error)

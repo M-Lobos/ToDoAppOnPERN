@@ -6,7 +6,8 @@
         "**/.DS_Store": true,
         "**/Thumbs.db": true,
         "server": true,
-        /* "client": true, */
+        "server/node_modules": true,
+        "client": true,
         "client/node_modules": true,
         "client/public": true,
     }
