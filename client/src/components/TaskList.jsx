@@ -1,8 +1,9 @@
 import { useEffect, useState } from "react";
 import { Button, Card, CardContent, Typography } from "@mui/material"
+import { useNavigate } from 'react-router-dom';
 
 export default function TaskList() {
-
+    const navigate = useNavigate();
     const [tasks, setTask] = useState([])
 
     const loadTask = async () => {
@@ -81,7 +82,7 @@ export default function TaskList() {
                                 <Button
                                     variant="contained"
                                     color="primary"
-                                    onClick={() => console.log("edit")}
+                                    onClick={() => navigate(`/task/${task.id}/edit`)}
                                     style={{
                                         marginRight: ".5rem",
                                         marginTop: ".5rem",

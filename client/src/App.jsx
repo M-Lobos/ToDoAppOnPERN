@@ -15,7 +15,7 @@ function App() {
         <Routes>
           <Route path="/" element={<TaskList />} />
           <Route path="/task/new" element={<TaskForm />} />
-          falta la ruta de editar
+          <Route path="/task/:id/edit" element={<TaskForm />} />
         </Routes>
       </Container>
     </BrowserRouter>
