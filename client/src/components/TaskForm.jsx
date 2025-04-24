@@ -1,5 +1,5 @@
-import { useState, useEffect } from "react"
-import { Button, Card, CardContent, Grid, TextField, Typography } from "@mui/material"
+import { useState, /* useEffect */ } from "react"
+import { Button, Card, CardContent, CircularProgress, Grid, TextField, Typography } from "@mui/material"
 import { useNavigate } from "react-router-dom"
 
 
@@ -11,12 +11,17 @@ function TaskForm() {
         description: "",
     });
 
+    const [loading, sEtloading] = useState(false)
+
     const navigate = useNavigate();
 
     const handleSubmit = async (e) => {
         e.preventDefault();
         /* console.log("submit") */
         /* console.log("task", task) */
+
+        sEtloading(true)
+
         const res = await fetch("http://localhost:3000/api/v1/tasks", {
             method: "POST",
             headers: { "content-type": "application/json" },
@@ -25,6 +30,7 @@ function TaskForm() {
         const data = await res.json();
         console.log("data", data);
 
+        sEtloading(false)
         navigate("/");
         //this will redirect to the main page (task list) after creating a new task
     }
@@ -93,8 +99,22 @@ function TaskForm() {
                                 inputProps={{ style: { color: "white" } }}
                             />
 
-                            <Button color="primary" variant="contained" type="submit" sx={{ mt: 2 }}>
-                                Save
+                            <Button
+                                variant="contained"
+                                type="submit"
+                                sx={{ mt: 2 }}
+                                disabled={!task.title || !task.description}
+                                style={{
+                                    color: "#fff",
+                                }}
+                            >
+                                {loading ? (<CircularProgress
+                                    color="inherit"
+                                    size={24}
+                                />) : ("Create"
+
+                                )}
+
                             </Button>
 
                         </form>

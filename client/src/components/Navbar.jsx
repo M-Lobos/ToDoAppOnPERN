@@ -16,6 +16,7 @@ function Navbar() {
                             </Link>
                         </Typography>
                         <Button
+                            color='success'
                             variant='contained'
                             onClick={() => navigate("/task/new")}
                         >
